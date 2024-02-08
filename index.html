@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/styles.css">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <style>
+    .invalid {
+      background-color: #ffe4e4; /* Light red */
+      border-color: #ff3333; /* Red */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sign-up form start -->
+
+  <div class="main">
+    <div class="left">
+      <h1>Stay updated!</h1>
+    
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+    
+      <ul>
+        <li>Product discovery and building what matters</li>
+        <li>Measuring to ensure updates are a success</li>
+        <li>And much more!</li>
+      </ul>
+      <form id="signupForm" action="success.html" method="post">
+
+        <div class="error-label">
+          <label for="email"><strong>Email address</strong></label>
+          <p class="error-msg" id="error">Valid email required</p>
+        </div>
+
+        <br>
+        <input class="email" id="email" type="email" placeholder="email@company.com">
+        <br><br>
+        <input class="btn" id="btn" type="submit" value="Subscribe to monthly newsletter">
+      </form>
+    
+  </div>
+  
+  <div class="right">
+    <img src="assets/images/illustration-sign-up-desktop.svg" alt=""/>
+    <!-- <embed src="assets/images/illustration-sign-up-desktop.svg" type="image/svg+xml"> -->
+  </div>
+</div>
+<!-- Sign-up form end -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>
+    let email = document.querySelector("#email");
+    let formSubmit = document.querySelector('#btn');
+    let form = document.querySelector("#signupForm");
+    let errorParagraph = document.querySelector("#error");
+    let emailRegex = /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,8}$/;
+  
+    function validateEmail() {
+      let valid = emailRegex.test(email.value);
+      if (!valid) {
+        errorParagraph.style.display = "block";
+        email.classList.add("invalid");
+      } else {
+        errorParagraph.style.display = "none";
+        email.classList.remove("invalid");
+      }
+      return valid;
+    }
+  
+    formSubmit.addEventListener("click", (event) => {
+      if (!validateEmail()) {
+        event.preventDefault();
+      }
+    });
+  </script>
+  
+</body>
+</html>

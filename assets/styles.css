@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+  .attribution { font-size: 11px; text-align: center; }
+  .attribution a { color: hsl(228, 45%, 44%); }
+body{
+    background-color: hsl(234, 29%, 20%);
+    font-family:  'Roboto', sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 45px;
+    color: #1F253F;
+}
+
+.main{
+    margin: 5% 20%;
+    width: fit-content;
+    height: min-content;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    justify-content: center;
+
+}
+
+.left{
+    margin-right: 20px;
+    padding: 25px;
+    text-align: justify !important;
+}
+
+ul{
+    list-style-position: outside;
+    padding: 10px 25px;
+    
+}
+
+li{
+    list-style-image: url('images/icon-list.svg');
+    line-height: 1.5;
+    padding-left :15px ;
+}
+li::marker{
+    font-size: 20px;
+}
+
+form{
+    width: 100%;
+}
+
+label{
+    font-size: 12px;
+}
+
+.email{
+    padding: 15px;
+    border-radius: 7px;
+    width: 93%;
+    border: 0.5px solid hsl(231, 7%, 60%);
+}
+
+.email:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.btn{
+    width: 100%;
+    color: white;
+    background-color: hsl(234, 29%, 20%);
+    border-radius: 7px;
+    padding: 15px;
+    border: none;
+}
+
+.btn:hover{
+    background-image: linear-gradient(to right, #FF5476, #FF6841);
+    cursor: pointer;
+}
+
+.error-label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signupForm.invalid input:first-of-type {
+    border: hsl(14, 97%, 43%) 1px solid;
+    background-color: hsla(14, 99%, 40%, 0.1);
+    color: hsl(14, 97%, 43%);
+  }
+  
+  .signupForm.valid input:first-of-type {
+    border: hsl(107, 62%, 31%) 1px solid;
+    background-color: hsla(107, 62%, 31%, 0.1);
+    color: hsl(107, 62%, 31%);
+  }
+  
+  .signupForm.invalid #error {
+    display: block;
+  }
+  
+  .signupForm.valid #error {
+    display: none;
+  }
+  .error-msg#error {
+    color: hsl(14, 97%, 43%);
+    display: none;
+    font-size: 12px;
+    margin: 0;
+  }
+
+embed{
+    width: auto;
+    height: 450px;
+}
+
+@media screen and (max-width: 375px) {
+    .body{
+        margin: 0;
+    }
+    .main {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        padding: 0;
+      flex-direction: column-reverse;
+      /* width: min(400px, 100vw); */
+      justify-content: flex-end;
+    }
+  
+    .right {
+      padding: 0;
+      width: 100%;
+      height: 25%;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-basis: unset;
+    }
+    .right img{
+        width: 100%;
+        height: auto;
+        content: url(../assets/images/illustration-sign-up-mobile.svg);
+    }
+}
